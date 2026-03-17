@@ -22,6 +22,8 @@
     />
     <!-- css link -->
     <link rel="stylesheet" href="./styles/style.css" />
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
   </head>
   <body>
     <header class="max-w-[1920px] mx-auto">
@@ -40,7 +42,7 @@
               <span id="heart-beat">0</span>❤️
             </button>
             <button class="btn rounded-2xl bg-[#ecfff0] font-black text-base">
-              <span>100</span>🪙
+              <span id="call-coin">100</span>🪙
             </button>
             <button class="btn rounded-2xl bg-[#00a63ef2] text-white text-lg">
               <span>2</span> Copy
@@ -80,10 +82,10 @@
               <!-- cart details -->
               <div class="space-y-2 p-5">
                 <h2 class="font-bold text-2xl">জাতীয় জরুরি সেবা</h2>
-                <p class="font-medium text-lg text-[#5c5c5c]">
+                <p class="cart-sub-title font-medium text-lg text-[#5c5c5c]">
                   National Emergency
                 </p>
-                <h2 class="font-bold text-2xl mt-6">999</h2>
+                <h2 class="emergency-number font-bold text-2xl mt-6">999</h2>
                 <button
                   class="bg-[#f2f2f2] font-medium text-lg text-[#5c5c5c] rounded-xl p-2"
                 >
@@ -98,32 +100,30 @@
                   <span><i class="fa-regular fa-copy"></i></span> Copy
                 </button>
                 <button
-                  class="btn rounded-2xl bg-[#00a63ef2] text-white text-lg px-8 py-8"
+                  class="call-btn btn rounded-2xl bg-[#00a63ef2] text-white text-lg px-8 py-8"
                 >
                   <span><i class="fa-solid fa-phone"></i></span> Call
                 </button>
               </div>
             </div>
-            <!-- cart 1 -->
+            <!-- cart 2 -->
             <div class="cart-div bg-white rounded-md shadow-lg">
               <!-- cart icon -->
               <div class="flex justify-between items-center p-5">
                 <p class="bg-[#ffe3e1] rounded-xl w-10 p-2">
-                  <img src="./assets/emergency.png" alt="" />
+                  <img src="./assets/police.png" alt="" />
                 </p>
                 <p class="heart"><i class="fa-regular fa-heart"></i></p>
               </div>
               <!-- cart details -->
               <div class="space-y-2 p-5">
-                <h2 class="font-bold text-2xl">জাতীয় জরুরি সেবা</h2>
-                <p class="font-medium text-lg text-[#5c5c5c]">
-                  National Emergency
-                </p>
+                <h2 class="font-bold text-2xl">পুলিশ</h2>
+                <p class="font-medium text-lg text-[#5c5c5c]">Police</p>
                 <h2 class="font-bold text-2xl mt-6">999</h2>
                 <button
                   class="bg-[#f2f2f2] font-medium text-lg text-[#5c5c5c] rounded-xl p-2"
                 >
-                  সার্বজনীন
+                  পুলিশ
                 </button>
               </div>
               <!-- btn -->
@@ -134,15 +134,12 @@
                   <span><i class="fa-regular fa-copy"></i></span> Copy
                 </button>
                 <button
-                  class="btn rounded-2xl bg-[#00a63ef2] text-white text-lg px-8 py-8"
+                  class="call-btn btn rounded-2xl bg-[#00a63ef2] text-white text-lg px-8 py-8"
                 >
                   <span><i class="fa-solid fa-phone"></i></span> Call
                 </button>
               </div>
             </div>
-            
-            
-           
           </div>
         </section>
         <aside class="bg-white col-span-3">
@@ -154,27 +151,20 @@
                 ><span class="font-bold text-xl ml-2">Call History</span>
               </p>
 
-              <button
+              <button id="clear-btn"
                 class="btn rounded-4xl bg-[#00a63ef2] text-white text-lg px-10 py-8"
               >
                 Clear
               </button>
             </div>
-            <div
-              class="rounded-lg flex justify-between items-center shadow-lg mt-5 p-5"
-            >
-              <div class="">
-                <p class="text-lg">জাতীয় জরুরি সেবা</p>
-                <p class="text-lg">999</p>
-              </div>
-              <p class="">11:36:58 AM</p>
+
+            <div id="call-history-container" class="">
+              
             </div>
           </div>
         </aside>
       </section>
     </main>
-
-
     <script src="./index.js"></script>
   </body>
 </html>
