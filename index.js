@@ -51,6 +51,8 @@ for (let callBtn of callButtons) {
       );
     }
     alert(` Calling... ${cartTitle} ${cartNumber}`);
+    const coinDecrement = Number(coinValue) - 20;
+    coin.innerText = coinDecrement;
 
     const currentTime = {
       name: `${cartTitle}`,
@@ -76,8 +78,7 @@ for (let callBtn of callButtons) {
     callHistoryContainer.append(createElement);
 
     callHistory.appendChild(createElement);
-    const coinDecrement = Number(coinValue) - 20;
-    coin.innerText = coinDecrement;
+    
   });
 }
 
