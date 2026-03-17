@@ -50,10 +50,9 @@ for (let callBtn of callButtons) {
     const coinDecrement = Number(coinValue) - 20;
     coin.innerText = coinDecrement;
   });
-
 }
 
 const clearBtn = getElement("clear-btn");
-document.getElementById("clear-btn").addEventListener("click",function(){
+document.getElementById("clear-btn").addEventListener("click", function () {
   document.getElementById("call-history-container").innerText = "";
-})
+});
