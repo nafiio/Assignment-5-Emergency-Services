@@ -15,6 +15,24 @@ for (const heart of heartClicked) {
   });
 }
 
+// copy btn
+
+const copyBtns = document.getElementsByClassName("copy-btn");
+// console.log(copyBtns);
+for (const btn of copyBtns) {
+  // console.log(btn)
+  btn.addEventListener("click", function () {
+    const copyNumber = document.getElementById("copy-number");
+    const copyNumberValue = copyNumber.innerText;
+    const cartCopyNumber =
+      btn.parentNode.parentNode.children[1].children[2].innerText;
+    alert(`নম্বর কপি হয়েছে : ${cartCopyNumber}`);
+    navigator.clipboard.writeText(cartCopyNumber);
+    const countNumber = Number(copyNumberValue) + 1;
+    copyNumber.innerText = countNumber;
+  });
+}
+
 // Call button
 const callButtons = document.getElementsByClassName("call-btn");
 for (let callBtn of callButtons) {
@@ -25,27 +43,38 @@ for (let callBtn of callButtons) {
       callBtn.parentNode.parentNode.children[1].children[2].innerText;
     const cartIcon = callBtn.parentNode.children[1].children[0].innerText;
 
-    alert(` Calling... ${cartTitle} ${cartNumber}`);
-
     const coin = getElement("call-coin");
     const coinValue = coin.innerText;
     if (coinValue < 20) {
-      return alert("insufficiant balance");
+      return alert(
+        "❌আপনার পর্যাপ্ত কয়েন নেই! কল করতে কমপক্ষে ২০ কয়েন লাগবে।",
+      );
     }
-    const callHistory = getElement("call-history-container");
-    // console.log(callHistory)
+    alert(` Calling... ${cartTitle} ${cartNumber}`);
+
+    const currentTime = {
+      name: `${cartTitle}`,
+      number: `${cartNumber}`,
+      date: new Date().toLocaleTimeString(),
+    };
+    const callHistoryContainer = document.getElementById(
+      "call-history-container",
+    );
+
     const createElement = document.createElement("div");
     createElement.innerHTML = `
     <div
-                class="rounded-lg flex justify-between items-center shadow-lg mt-5 p-5"
+                class="rounded-lg flex justify-between items-center shadow-sm mb-5 p-5"
               >
                 <div class="">
-                  <p class="text-lg">${cartTitle}</p>
-                  <p class="text-lg">${cartNumber}</p>
+                  <p class="text-lg">${currentTime.name}</p>
+                  <p class="text-lg">${currentTime.number}</p>
                 </div>
-                <p class="">11:36:58 AM</p>
+                <p class="">${currentTime.date}</p>
               </div>
     `;
+    callHistoryContainer.append(createElement);
+
     callHistory.appendChild(createElement);
     const coinDecrement = Number(coinValue) - 20;
     coin.innerText = coinDecrement;
@@ -53,6 +82,6 @@ for (let callBtn of callButtons) {
 }
 
 const clearBtn = getElement("clear-btn");
-document.getElementById("clear-btn").addEventListener("click", function () {
+clearBtn.addEventListener("click", function () {
   document.getElementById("call-history-container").innerText = "";
 });
