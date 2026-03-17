@@ -38,7 +38,7 @@ const callButtons = document.getElementsByClassName("call-btn");
 for (let callBtn of callButtons) {
   callBtn.addEventListener("click", function () {
     const cartTitle =
-      callBtn.parentNode.parentNode.children[1].children[1].innerText;
+      callBtn.parentNode.parentNode.children[1].children[0].innerText;
     const cartNumber =
       callBtn.parentNode.parentNode.children[1].children[2].innerText;
     const cartIcon = callBtn.parentNode.children[1].children[0].innerText;
@@ -69,16 +69,13 @@ for (let callBtn of callButtons) {
                 class="rounded-lg flex justify-between items-center shadow-sm mb-5 p-5"
               >
                 <div class="">
-                  <p class="text-lg">${currentTime.name}</p>
-                  <p class="text-lg">${currentTime.number}</p>
+                  <p class="text-lg font-bold">${currentTime.name}</p>
+                  <p class="text-lg text-[#5c5c5c]">${currentTime.number}</p>
                 </div>
-                <p class="">${currentTime.date}</p>
+                <p class="font-semibold text-lg">${currentTime.date}</p>
               </div>
     `;
     callHistoryContainer.append(createElement);
-
-    callHistory.appendChild(createElement);
-    
   });
 }
 
